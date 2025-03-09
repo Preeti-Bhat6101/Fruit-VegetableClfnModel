@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image  
 
 # Load the trained model
-model = load_model('C:\\Users\\preet\\Documents\\visual studio code\\ML_Fruits&Veg\\Image_classify.keras')
+model = load_model('Image_classify.keras')
 
 # Class labels
 data_cat = ['apple', 'banana', 'beetroot', 'bell pepper', 'cabbage', 'capsicum',
