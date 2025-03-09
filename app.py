@@ -36,11 +36,9 @@ if uploaded_file is not None:
     img_array = tf.keras.utils.img_to_array(model_image)
     img_batch = tf.expand_dims(img_array, axis=0)   
 
-with st.spinner("🔍 Analyzing the image..."):
-    prediction = model.predict(img_batch)
-    score = tf.nn.softmax(prediction[0]).numpy()
+    with st.spinner("🔍 Analyzing the image..."):
+        prediction = model.predict(img_batch)
+        score = tf.nn.softmax(prediction[0]).numpy()
 
-
-# Display result
-st.write(f'The Fruit or the Vegetable is  {data_cat[np.argmax(score)]}')
-st.write(f'Accuracy:  {np.max(score) * 100:.2f}%')
+        st.write(f'The Fruit or the Vegetable is  {data_cat[np.argmax(score)]}')
+        st.write(f'Accuracy:  {np.max(score) * 100:.2f}%')
